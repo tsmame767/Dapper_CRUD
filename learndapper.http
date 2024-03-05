@@ -1,0 +1,6 @@
+@learndapper_HostAddress = http://localhost:5104
+
+GET {{learndapper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
