@@ -59,5 +59,19 @@ namespace learndapper.Controllers
                 return NotFound();
             }
         }
+
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] Employee emp, int Id)
+        {
+            var _list = await this.service.Update(emp, Id);
+            if (_list != null)
+            {
+                return Ok(_list);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
