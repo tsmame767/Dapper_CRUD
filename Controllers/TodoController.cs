@@ -46,5 +46,18 @@ namespace learndapper.Controllers
             }
         }
 
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromBody] Employee emp)
+        {
+            var _list = await this.service.Create(emp);
+            if (_list != null)
+            {
+                return Ok(_list);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
