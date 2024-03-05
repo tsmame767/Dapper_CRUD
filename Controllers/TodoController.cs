@@ -31,7 +31,20 @@ namespace learndapper.Controllers
             }
         }
 
-       
+        [HttpGet("GetbyId/{Id}")]
+
+        public async Task<IActionResult> GetbyId(int Id)
+        {
+            var _list = await this.service.Getbyid(Id);
+            if (_list != null)
+            {
+                return Ok(_list);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
     }
 }
