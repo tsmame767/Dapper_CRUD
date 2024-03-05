@@ -73,5 +73,19 @@ namespace learndapper.Controllers
                 return NotFound();
             }
         }
+
+        [HttpPost("Remove")]
+        public async Task<IActionResult> Remove(int Id)
+        {
+            var _list = await this.service.Remove(Id);
+            if (_list != null)
+            {
+                return Ok(_list);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
